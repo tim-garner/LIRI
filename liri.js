@@ -47,3 +47,13 @@ axios.get("http://www.omdbapi.com/?t=hook&y=&plot=short&apikey=trilogy").then(
         console.log("The movie actors: " + response.data.Actors);
     }
 );
+
+// var fs= require("fs");
+
+// fs.writeFile("random.text", function(err) {
+//     if (err) {
+//         return console.log(err);
+//     }
+// });
+
+// console.log("random.txt");
