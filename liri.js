@@ -62,12 +62,14 @@ axios.get("https://rest.bandsintown.com/artists/").then(
     }
 );
 
-// fs.writeFile("random.text", "I want it that a way!", function(err) {
-//     if (err) {
-//         return.console.log(err);
-//     }
-
+fs.readFile("random.txt", "utf8", function(error, data) {
+     if (error) {
+     return console.log(error);
+    }
+    console.log(data);
+    var dataArr = data.split(",");
+    console.log(dataArr);
+  
     
-// });
+});
 
-// console.log("random.text was updated!");
