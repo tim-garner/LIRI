@@ -1,7 +1,7 @@
 console.log("working");
 
 
-// Installed Axios "NPM Install Axios"
+// // Installed Axios "NPM Install Axios"
 require("dotenv").config();
 var axios=require("axios");
 var fs = require("fs");
@@ -9,7 +9,7 @@ var fs = require("fs");
 // var moment=require("moment");
 var Spotify = require("node-spotify-api");
 
-// pulling API with movie 
+// // pulling API with movie 
 axios.get("http://www.omdbapi.com/?t=hook&y=&plot=short&apikey=trilogy").then(
     function(response) {
         console.log("The movie title: " + response.data.Title);
@@ -52,15 +52,7 @@ axios.get("http://www.omdbapi.com/?t=hook&y=&plot=short&apikey=trilogy").then(
     }
 );
 
-// need to set up for bands in town. 
-var query = "https://rest.bandsintown.com/artists/" +  "/events?app_id=codingbootcamp";
 
-axios.get("https://rest.bandsintown.com/artists/").then(
-    function(response) {
-        console.log("the band name: " + response.data.Bands);
-    
-    }
-);
 
 fs.readFile("random.txt", "utf8", function(error, data) {
      if (error) {
@@ -73,3 +65,13 @@ fs.readFile("random.txt", "utf8", function(error, data) {
     
 });
 
+// spotify.search({ type: 'track', query: songName, limit: 5  }, function(err, data) {
+//     if (err) {
+//     return console.log('Error occurred: ' + err);
+//     }
+// });
+
+var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+request(queryURL, function (error, response, body) {
+    console.log("Venue Name" + result.venue.name)
+})
